@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Test Post using MrHyde
+image: https://goo.gl/photos/KZWZi4wjZLd8MzDdA
 ---
 OK let's try MrHyde. 
 
