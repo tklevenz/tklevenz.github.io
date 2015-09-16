@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="home">
+
+    {% for post in site.posts %}
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" 
+            {% if post.image %} 
+              style="color: white" {% endif %}>{{ post.title }}</a>
+          </h2>
+          
+        </div>
+
+        {% if post.image %}
+          <div class="mdl-card__media">
+            <img src="{{ post.image }}" alt="">
+          </div>
+        {% endif %}
+
+        
+        <div class="mdl-card__supporting-text">        
+          {{ post.excerpt }}
+        </div>
+
+        <div class="mdl-card__actions mdl-card--border">
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+      </div>
+    {% endfor %}
+
+  <!--<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>-->
+
+</div>

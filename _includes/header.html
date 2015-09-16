@@ -1,0 +1,28 @@
+
+    
+        <header class="mdl-layout__header mdl-color--blue-grey-900">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="main-title mdl-layout-title"><a href="{{  "/" | prepend: site.baseurl }}">TOBIAS<strong>KLEVENZ</strong></a></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                  <a class="mdl-navigation__link is-active" href="{{ "/" | prepend: site.baseurl }}">Blog</a>
+                  {% for page in site.html_pages | sort:"order" %}
+                    {% if page.mainmenu %}
+                    <a class="mdl-navigation__link" href="{{ page.url }}">{{ page.title }}</a>
+                    {% endif %}
+                  {% endfor %}
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <span class="mdl-layout-title">Tobias<strong>Klevenz</strong></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link is-active" href="{{ "/" | prepend: site.baseurl }}">Blog</a>
+                  {% for page in site.html_pages %}
+                    <a class="mdl-navigation__link" href="{{ page.url }}">{{ page.title }}</a>
+                  {% endfor %}
+            </nav>
+        </div>
